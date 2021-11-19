@@ -8,4 +8,3 @@ userRouter.post("/create", createUser);
 userRouter.get("/show", getOneuser);
 
 module.exports = userRouter;
-

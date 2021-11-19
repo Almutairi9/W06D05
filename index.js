@@ -15,7 +15,7 @@ const todosRouter = require("./routers/routes/todo");
 app.use("/todo", todosRouter);
 
 const cors = require("cors");
-app.use(cors()); 
+app.use(cors());
 
 const PORT = process.env.PORT;
 

@@ -34,15 +34,16 @@ const createUser = (req, res) => {
 
 const getOneuser = (req, res) => {
   const { getUser } = req.body;
-  
+
   userModel
-    .findOne({userName:getUser}).exec()
+    .findOne({ userName: getUser })
+    .exec()
     .then((result) => {
       res.json(result);
     })
     .catch((err) => {
       res.send(err);
     });
-}
+};
 
-module.exports = { createUser , getOneuser };
+module.exports = { createUser, getOneuser };
