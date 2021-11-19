@@ -31,20 +31,20 @@ const getOnetodo = (req, res) => {
     });
 };
 
-// const deleteTodo = (req, res) => {
-//     const { task } = req.body;
-//     todosModel.delOne({
-//         task: task
-//       },(err) => {
-//           if (err)
-//           return handleError(err);
-//       });
-//       todosModel.find({}).then((result) =>{
-//         res.json(result);
-//       })
-//       .catch((err) => {
-//         res.send(err);
-//       });
-//     };
+const deleteTodo = (req, res) => {
+    const { task } = req.body;
+    todosModel.deleteOne({
+        task: task
+      },(err) => {
+          if (err)
+          return handleError(err);
+      });
+      todosModel.find({}).then((result) =>{
+        res.json(result);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+    };
 
-module.exports = { createTodo , getOnetodo};
+module.exports = { createTodo , getOnetodo , deleteTodo};
